@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="io.github.fuadreza.simplesingleactivityarchitecture.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_featureAFragment"
+            app:destination="@id/featureAFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/featureAFragment"
+        android:name="io.github.fuadreza.simplesingleactivityarchitecture.ui.feature_a.FeatureAFragment"
+        android:label="FeatureAFragment"
+        tools:layout="@layout/fragment_feature_a">
+        <action
+            android:id="@+id/action_featureAFragment_to_featureBFragment"
+            app:destination="@id/featureBFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/featureBFragment"
+        android:name="io.github.fuadreza.simplesingleactivityarchitecture.ui.feature_b.FeatureBFragment"
+        android:label="FeatureBFragment"
+        tools:layout="@layout/fragment_feature_b">
+        <action
+            android:id="@+id/action_featureBFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
